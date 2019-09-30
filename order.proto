@@ -9,9 +9,9 @@ service Order {
 }
 
 message CreateOrderRequest {
-    required string orderer = 1;
-    required string store = 2;
-    required int32 endtime = 3;
+    string orderer = 1;
+    string store = 2;
+    int32 endtime = 3;
 }
 
 message CreateOrderReply {
