@@ -4,7 +4,7 @@ option csharp_namespace = "ShallWeOrder";
 
 package Order;
 
-service Order {
+service Orderer {
     rpc CreateOrder (CreateOrderRequest) returns (CreateOrderReply);
 }
 
