@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option csharp_namespace = "ShallWeOrder";
+
+package Auth;
+
+service Auther {
+    rpc SignUp (SignUpRequest) returns (SignUpReply);
+    rpc SignIn (SignInRequest) returns (SignInReply);
+    rpc SignOut (Empty) returns (SignOutReply);
+}
+
+message SignUpRequest {
+    string id = 1;
+    string password = 2;
+    string name = 3;
+
+    enum Gender {
+        Male = 0;
+        Female = 1;
+    }
+    Gender gender = 4;
+}
+
+message SignUpReply {
+    int32 result = 1;
+}
+
+message SignInRequest {
+    string id = 1;
+    string password = 2;
+    bool remember_me = 3;
+}
+
+message SignInReply {
+    int32 result = 1;
+}
+
+message SignOutReply {
+    int32 result = 1;
+}
+
+message Empty { }
